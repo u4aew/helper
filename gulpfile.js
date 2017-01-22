@@ -40,7 +40,7 @@ gulp.task('production-js', function () {
         .pipe(gulp.dest('build/js/'));
 });
 gulp.task('production-css', function () {
-    gulp.src(['src/style/css/*.css'])
+    gulp.src(['src/style/css/lib/*.css','src/style/css/*.css'])
         .pipe(concat('style.css'))
         .pipe(cssmin())
         .pipe(rename({suffix: '.min'}))
