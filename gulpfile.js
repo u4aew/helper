@@ -34,14 +34,14 @@ gulp.task('stylus', function () {
 });
 
 gulp.task('production-js-wrapper', function () {
-    return gulp.src(['src/js/lib/jquery.js', 'src/js/lib/drag-drop.js', 'src/js/main.js', 'src/js/drag-drop-common.js'])
+    return gulp.src(['src/js/lib/jquery.js', 'src/js/lib/drag-drop.js', 'src/js/main.js', 'src/js/drag-drop-common.js', 'src/js/open-helper.js'])
         .pipe(concat('wrapper.js'))
         .pipe(jsmin())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('build/js/'));
 });
 gulp.task('production-js-helper', function () {
-    return gulp.src(['src/js/lib/jquery.js','src/js-helper/open.js'])
+    return gulp.src(['src/js/lib/jquery.js', 'src/js-helper/slide-helper-open.js'])
         .pipe(concat('helper.js'))
         .pipe(jsmin())
         .pipe(rename({suffix: '.min'}))

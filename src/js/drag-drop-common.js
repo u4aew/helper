@@ -1,3 +1,4 @@
+/*
 $(function () {
 
     $.fn.dragdrop = function (opts) {
@@ -68,3 +69,5 @@ $(function () {
     dragRef.bindEvent('dragend', shouldntHappen);
     dragRef.unbindEvent('dragend', shouldntHappen);
 })
+
+*/
