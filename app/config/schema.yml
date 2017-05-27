@@ -1,0 +1,75 @@
+config:
+    required: true
+
+database:
+    +:
+        name: default
+        namespace: AppBundle\Model
+        defaultIdMethod: native
+        identifierQuoting: true
+
+    +vendor:
+        type: mysql
+        parameters:
+            Engine: InnoDB
+            Charset: utf8
+
+    +behavior:
+        - auto_add_pk
+        - cache
+
+    user:
+        email: text
+        name: text
+
+    issue:
+        question: text
+        answer: text
+
+    storage_section:
+        section_id: - int > storage_section.id
+        title: text
+        +behavior:
+            - sortable
+
+    storage:
+        section_id: int > storage_section.id
+        title: text
+        code: varchar(32) key(6)
+        multiresult: bool
+        visible: bool = 1
+        +behavior:
+            - sortable
+
+    storage_field:
+        storage_id: int > storage.id
+        type: tinyint(3)
+        title: text
+        code: varchar(32) key(6)
+        visible: bool = 1
+        +behavior:
+            - sortable
+
+    storage_option:
+        field_id: int > storage_field.id
+        title: text
+        +behavior:
+            - sortable
+
+    storage_result:
+        storage_id: int > storage.id
+        visible: bool = 1
+        +behavior:
+            - sortable: storage_id
+
+    storage_value:
+        result_id: int > storage_result.id
+        field_id: int > storage_field.id
+        option_id: - int > storage_option.id
+        text: text
+        +behavior:
+            - image
+            - gallery
+            - file
+            - video
+

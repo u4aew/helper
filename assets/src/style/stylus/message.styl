@@ -1,0 +1,77 @@
+.message {
+  box-sizing border-box
+  padding 5px
+  margin-bottom 10px
+  font-size: 13px;
+  line-height 1.5
+  border-radius 4px
+
+  &_admin {
+    margin-left 25px
+    padding-left 15px
+    border 1px solid #3cb868
+    background-color #3cb868
+    color white
+    position relative
+    &:before {
+      content ''
+      position absolute
+      width: 0;
+      height: 0;
+      border: 0 solid transparent;
+      border-top-width: 10px;
+      border-bottom-width: 10px;
+      border-right: 12px solid #3cb868;
+      left -8px
+      top 50%
+      transform translateY(-50%)
+    }
+  }
+  &_user {
+    border 1px solid #eef1f5
+    background-color #eef1f5
+    color #414243
+    margin-right 25px
+    padding-left 15px
+    position relative
+    &:before {
+      content ''
+      position absolute
+      width: 0;
+      height: 0;
+      border: 0 solid transparent;
+      border-bottom-width: 10px;
+      border-top-width: 10px;
+      border-left: 12px solid #eef1f5;
+      right -8px
+      top 50%
+      transform translateY(-50%)
+    }
+
+    & + & {
+      margin-top -12px
+    }
+  }
+  &__text {
+
+
+  }
+  &__info {
+    &-name {
+      font-size 15px
+      font-weight 700
+    }
+  }
+  &__task {
+    margin-top 10px
+    &-title {
+    }
+    &-list {
+      padding-left 5px
+    }
+
+    &-item {
+
+    }
+  }
+}

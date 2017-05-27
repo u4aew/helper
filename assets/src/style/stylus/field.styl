@@ -1,0 +1,43 @@
+.field {
+  padding 10px
+  padding-left 25px
+  padding-right 25px
+  background-color #eef1f5
+  &__content {
+    height 75px
+    display flex
+    flex-flow row nowrap
+    textarea {
+      flex 1 70%
+      display block
+      appearance none
+      box-sizing border-box
+      width 100%
+      padding 1em
+      border 1px solid  #23283c
+      border-radius 0
+      box-shadow none
+      background
+      line-height 1
+      outline none
+      resize none
+      font-size 14px
+      &:focus {
+        border-color #43a047
+      }
+    }
+    textarea.is-error {
+      border 1px solid  red
+    }
+    button {
+      cursor pointer
+      font-size 18px
+      color white
+      flex 1 30px
+      display block
+      box-sizing border-box
+      border 1px solid  #3cb868
+      background-color  #3cb868
+    }
+  }
+}

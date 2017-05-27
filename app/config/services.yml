@@ -1,0 +1,16 @@
+services:
+    app.authorization:
+        class: AppBundle\Service\Authorization
+        arguments: ["@service_container"]
+
+    app.admin.consultant_module:
+        class: AppBundle\Admin\Consultant\ConsultantModule
+        tags: [{name: 'creonit_admin.module'}]
+
+    app.admin.storage_module:
+        class: AppBundle\Admin\Storage\StorageModule
+        tags: [{ name: creonit_admin.module }]
+
+    app.storage:
+        class: AppBundle\Service\StorageService
+        arguments: ['@service_container']

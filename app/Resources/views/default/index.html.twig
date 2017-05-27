@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="js-helper helper helper_visible block">
+        <div class="header header_blue helper__header">
+            <div class="header__left">
+                <div class="header__avatar" style="background-image: url({{ storage_service.get('robot.image').url }})">
+
+                </div>
+            </div>
+            <div class="header__right">
+                <div class="header__info">
+                    <div class="header__info-name">{{ storage_service.get('robot.name') }}</div>
+                    <div class="header__info-position">{{ storage_service.get('robot.position') }}</div>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="main__content" data-name="{{ storage_service.get('robot.name') }}">
+                <div js-field-message class="message message_admin">
+                    <div class="message__info"><span class="message__info-name">{{ storage_service.get('robot.name') }}</span> <span
+                                class="message__info-time"> 15:31 </span></div>
+                    <div class="message__text">
+                        Здравствуйте! Чем я могу вам помочь?
+                    </div>
+                    <div class="message__task">
+                        <div class="message__task-title">
+                            Мой список команд;
+                        </div>
+                        <div class="message__task-list">
+                            <div class="message__task-item">
+                                - Что поменялось за последний месяц
+                            </div>
+                            <div class="message__task-item">
+                                - Расскажи новости
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="field">
+            <div class="field__content">
+                <textarea class="" js-field placeholder="Введите сообщение и нажмите Enter"></textarea>
+            </div>
+        </div>
+    </div>
+{% endblock %}
